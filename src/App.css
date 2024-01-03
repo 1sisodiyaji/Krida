@@ -1,0 +1,27 @@
+body {
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  }
+  
+  a {
+    color: #00B7FF;
+  }
+  
+  
+  
+  .questions:hover {
+    box-shadow: 2px 2px #d63838; /* Adjust the values based on your preference */
+  }
+  
+  .questions {
+    font-size: 1.2rem;
+  }
+  
+  @media only screen and (max-width: 374px) {
+    .questions {
+        font-size: 0.7rem; 
+    }
+  }
+  .nav-link:hover{
+    border-bottom: 2px solid red;
+  }
+  
