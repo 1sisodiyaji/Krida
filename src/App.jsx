@@ -1,7 +1,8 @@
 import { useState } from "react";
 import "./App.css";
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
-import "@fortawesome/fontawesome-free/css/all.min.css";
+import "@fortawesome/fontawesome-free/css/all.min.css"; 
+import { Link } from "react-router-dom";
 import {
   MDBContainer,
   MDBNavbar,
@@ -21,16 +22,16 @@ import {
 import { MDBCarousel, MDBCarouselItem } from "mdb-react-ui-kit";
 
 function App() {
-  const [openBasic, setOpenBasic] = useState(false); // Add this line
+  const [openBasic, setOpenBasic] = useState(false); 
 
   return (
     <>
-    {/* NavBar */}
+      {/* NavBar */}
       <MDBNavbar expand="lg" light bgColor="black">
         <MDBContainer fluid>
           <MDBNavbarBrand href="#">
             <img
-              src="../public/images/BrandName.png"
+              src="/images/BrandName.png"
               height={30}
               alt="logo"
               className="navbar-brand mt-2 mt-lg-0"
@@ -102,16 +103,16 @@ function App() {
               </MDBNavbarItem>
             </MDBNavbarNav>
 
-            <form className="d-flex input-group w-auto">
-              <a href="/user_login.jsx">
+            {/* <form className="d-flex input-group w-auto"> */}
+              <Link to="/user-login">
                 <MDBBtn
                   className="btn btn-md shadow-6 text-light me-2 bg-dark"
                   style={{ textDecoration: "none", color: "inherit" }}
                 >
-                  <i className="fi fi-sr-arrow-right text-danger "></i>
+                  <i className="fi fi-sr-arrow-right text-danger"></i>
                 </MDBBtn>
-              </a>
-            </form>
+              </Link>
+            {/* </form> */}
           </MDBCollapse>
         </MDBContainer>
       </MDBNavbar>
@@ -177,7 +178,7 @@ function App() {
           Betting More And More & Enjoy the game
         </div>
       </div>
-     
+
       {/* Spin */}
       <div className="container mt-lg-4 p-lg-4 p-1">
         <div className="row">
@@ -204,7 +205,9 @@ function App() {
         <div className="container-fluid mt-lg-5 mt-3">
           <div className="row mx-auto">
             <div className="col-lg-6 col-12 text-start">
-              <h3 className="text-center text-warning">Frequently Asked Questions</h3>
+              <h3 className="text-center text-warning">
+                Frequently Asked Questions
+              </h3>
               <details
                 className="border border-danger p-lg-2 p-1 m-lg-2 mt-2 questions"
                 style={{ color: "#de7777", backgroundColor: "#131313" }}
@@ -394,125 +397,130 @@ function App() {
         </div>
       </section>
 
-    {/* Subscibe & Payment  */}
+      {/* Subscibe & Payment  */}
       <section>
-      <div className="container-fluid bg-danger mt-lg-5 mt-3">
-        <div className="row">
-          {/* <!-- subscribe for others --> */}
-          <div
-            className="col-lg-6 col-12 text-center p-4"
-            style={{ backgroundColor: '#131313' }}
-          >
-            <h5 className="text-danger p-4"> Subscribe For Offers </h5>
-            <div className="row g-0">
-              <div className="col-lg-10 col-10" data-mdb-input-init>
-                <input
-                  type="email"
-                  id="typeEmail"
-                  className="form-control w-full bg-dark text-danger border border-danger"
-                  placeholder="Enter Your Email First .."
+        <div className="container-fluid bg-danger mt-lg-5 mt-3">
+          <div className="row">
+            {/* <!-- subscribe for others --> */}
+            <div
+              className="col-lg-6 col-12 text-center p-4"
+              style={{ backgroundColor: "#131313" }}
+            >
+              <h5 className="text-danger p-4"> Subscribe For Offers </h5>
+              <div className="row g-0">
+                <div className="col-lg-10 col-10" data-mdb-input-init>
+                  <input
+                    type="email"
+                    id="typeEmail"
+                    className="form-control w-full bg-dark text-danger border border-danger"
+                    placeholder="Enter Your Email First .."
+                  />
+                </div>
+                <div className="col-lg-2 col-2 d-flex justify-content-start align-items-center">
+                  <button className="btn btn-sm bg-danger ms-1">
+                    <i className="fi fi-rs-paper-plane text-light"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            {/* <!-- payement method --> */}
+            <div
+              className="col-lg-6 col-12 p-4"
+              style={{ backgroundColor: "#131313" }}
+            >
+              <h3 className="text-danger text-center">
+                {" "}
+                Our Supporting Partners{" "}
+              </h3>
+              <div className="row">
+                <img
+                  src="/images/G-Pay.png"
+                  className="col-lg-3 col-3 p-5"
+                  alt="Google pay"
+                />
+                <img
+                  src="/images/paypal.png"
+                  className="col-lg-3 col-3 p-5"
+                  alt="Paypal"
+                />
+                <img
+                  src="/images/Upi.png"
+                  className="col-lg-3 col-3 p-5"
+                  alt="upi"
+                />
+                <img
+                  src="/images/Visa.png"
+                  className="col-lg-3 col-3 p-5"
+                  alt="visa"
                 />
               </div>
-              <div className="col-lg-2 col-2 d-flex justify-content-start align-items-center">
-                <button className="btn btn-sm bg-danger ms-1">
-                  <i className="fi fi-rs-paper-plane text-light"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-          {/* <!-- payement method --> */}
-          <div
-            className="col-lg-6 col-12 p-4"
-            style={{ backgroundColor: '#131313' }}
-          >
-            <h3 className="text-danger text-center"> Our Supporting Partners </h3>
-            <div className="row">
-              <img
-                src="/images/G-Pay.png"
-                className="col-lg-3 col-3 p-5"
-                alt="Google pay"
-              />
-              <img
-                src="/images/paypal.png"
-                className="col-lg-3 col-3 p-5"
-                alt="Paypal"
-              />
-              <img
-                src="/images/Upi.png"
-                className="col-lg-3 col-3 p-5"
-                alt="upi"
-              />
-              <img
-                src="/images/Visa.png"
-                className="col-lg-3 col-3 p-5"
-                alt="visa"
-              />
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    {/* Footer Section */}
-    <section>
-      <div className="row">
-        <div className="col-lg-4">
-          <h3 className="text-danger text-center">About Krida</h3>
-          <p className="text-secondary p-2">
-            {" "}
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, odit
-            tenetur! Distinctio quasi unde laboriosam architecto perferendis
-            cupiditate neque! Quia iusto corporis earum optio, enim corrupti
-            itaque sint ipsum ducimus eum quidem deserunt voluptas ipsa omnis
-            mollitia eaque error obcaecati doloremque facere repellat illo
-            dolorum voluptates neque. Dignissimos, ab sint.
-          </p>
-          {/* <!-- social media links --> */}
-          <div className="d-flex justify-content-evenly align-items-center">
-            <i className="fi fi-brands-facebook text-danger fa-2x "></i>
-            <i className="fi fi-brands-twitter-alt-circle text-danger fa-2x"></i>
-            <i className="fi fi-brands-instagram text-danger fa-2x"></i>
-            <i className="fi fi-brands-linkedin text-danger fa-2x"></i>
-          </div>
-        </div>
-        <div className="col-lg-4">
-          <h3 className="text-danger text-center">Important links</h3>
-          <div className="row">
-            <div className="col-lg-6 col-6 text-secondary ">
-              <p>Live Score</p>
-              <p>How To Play</p>
-              <p>Tournament</p>
-              <p>registration bonus</p>
-              <p>Contact</p>
-            </div>
-            <div className="col-lg-6 col-6 text-secondary ">
-              <p>Help Desk</p>
-              <p>FAQ</p>
-              <p>Support</p>
+      {/* Footer Section */}
+      <section>
+        <div className="row">
+          <div className="col-lg-4">
+            <h3 className="text-danger text-center">About Krida</h3>
+            <p className="text-secondary p-2">
+              {" "}
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe,
+              odit tenetur! Distinctio quasi unde laboriosam architecto
+              perferendis cupiditate neque! Quia iusto corporis earum optio,
+              enim corrupti itaque sint ipsum ducimus eum quidem deserunt
+              voluptas ipsa omnis mollitia eaque error obcaecati doloremque
+              facere repellat illo dolorum voluptates neque. Dignissimos, ab
+              sint.
+            </p>
+            {/* <!-- social media links --> */}
+            <div className="d-flex justify-content-evenly align-items-center">
+              <i className="fi fi-brands-facebook text-danger fa-2x "></i>
+              <i className="fi fi-brands-twitter-alt-circle text-danger fa-2x"></i>
+              <i className="fi fi-brands-instagram text-danger fa-2x"></i>
+              <i className="fi fi-brands-linkedin text-danger fa-2x"></i>
             </div>
           </div>
-        </div>
-        <div className="col-lg-4">
-          <h3 className="text-danger text-center">Security info</h3>
-          <div className="row">
-            <div className="col-lg-12 col-6">
-              <div className="d-flex justify-content-center align-items-center">
-                <i className="fi fi-rs-shield-check text-danger fa-2x me-2"></i>
-                <h3 className="text-secondary">Safe & secure Banking</h3>
+          <div className="col-lg-4">
+            <h3 className="text-danger text-center">Important links</h3>
+            <div className="row">
+              <div className="col-lg-6 col-6 text-secondary ">
+                <p>Live Score</p>
+                <p>How To Play</p>
+                <p>Tournament</p>
+                <p>registration bonus</p>
+                <p>Contact</p>
               </div>
-            </div>
-            <div className="col-lg-12 col-6">
-              <div className="d-flex justify-content-center align-items-center">
-                <i className="fi fi-rs-trophy text-danger fa-2x me-2"></i>
-                <h3 className="text-secondary">
-                  Total <span className="text-danger">123</span> Register User
-                </h3>
+              <div className="col-lg-6 col-6 text-secondary ">
+                <p>Help Desk</p>
+                <p>FAQ</p>
+                <p>Support</p>
               </div>
             </div>
           </div>
+          <div className="col-lg-4">
+            <h3 className="text-danger text-center">Security info</h3>
+            <div className="row">
+              <div className="col-lg-12 col-6">
+                <div className="d-flex justify-content-center align-items-center">
+                  <i className="fi fi-rs-shield-check text-danger fa-2x me-2"></i>
+                  <h3 className="text-secondary">Safe & secure Banking</h3>
+                </div>
+              </div>
+              <div className="col-lg-12 col-6">
+                <div className="d-flex justify-content-center align-items-center">
+                  <i className="fi fi-rs-trophy text-danger fa-2x me-2"></i>
+                  <h3 className="text-secondary">
+                    Total <span className="text-danger">123</span> Register User
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
     </>
   );
 }
